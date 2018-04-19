@@ -11,8 +11,7 @@ import java.util.List;
  */
 class Node {
 
-    static final Comparator<Node> VALUE_COMPARATOR = (a, b) ->
-            Double.valueOf(b.getValue()).compareTo(a.getValue());
+    static final Comparator<Node> MOST_VALUED_COMPARATOR = Comparator.comparing(Node::getValue).reversed();
 
     private final int id;
     private double value;

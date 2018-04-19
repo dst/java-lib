@@ -17,7 +17,7 @@ class MostValuedConnectionsFinder {
     public Set<Node> find(Node node, int n) {
         Set<Node> connections = new ConnectionsFinder().find(node);
         return connections.stream()
-                .sorted(Node.VALUE_COMPARATOR)
+                .sorted(Node.MOST_VALUED_COMPARATOR)
                 .filter(not(node::equals))
                 .limit(n)
                 .collect(toSet());
