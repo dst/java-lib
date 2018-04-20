@@ -10,11 +10,9 @@ import java.util.List;
 class LongestConsecutiveSubsequence {
 
     int find(List<Integer> numbers) {
-        HashSet<Integer> numbersSet = new HashSet<>();
-        numbers.forEach(n -> numbersSet.add(n));
-
         int longest = 0;
-        for (Integer n: numbers) {
+        HashSet<Integer> numbersSet = new HashSet<>(numbers);
+        for (Integer n : numbers) {
             if (!numbers.contains(n - 1)) {
                 int next = n + 1;
                 while (numbersSet.contains(next)) {
