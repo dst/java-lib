@@ -16,7 +16,7 @@ class ConnectionsFinderSpec extends Specification {
             connectionsFinder.find(node) == [node] as Set
     }
 
-    def 'should find all connections in list node1->node2-node3'() {
+    def 'should find all connections in list node1->node2->node3'() {
         given:
             ConnectionsFinder connectionsFinder = new ConnectionsFinder()
             Node node1 = new Node(1)
