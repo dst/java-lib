@@ -25,7 +25,6 @@ public class DirectedGraph {
             this.key = key;
         }
 
-
         void addNeighbour(Node node) {
             neighbours.add(node);
         }
