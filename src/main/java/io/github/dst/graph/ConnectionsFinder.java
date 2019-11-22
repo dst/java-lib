@@ -19,9 +19,9 @@ class ConnectionsFinder {
     }
 
     private Set<Node> doFind(Node node) {
-        int movieId = node.getId();
-        if (!visitedNodeIds.contains(movieId)) {
-            visitedNodeIds.add(movieId);
+        int nodeId = node.getId();
+        if (!visitedNodeIds.contains(nodeId)) {
+            visitedNodeIds.add(nodeId);
             connectedNodes.add(node);
             node.getNeighbours().forEach(this::doFind);
         }
