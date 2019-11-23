@@ -1,4 +1,4 @@
-package io.github.dst.algorithms.string;
+package io.github.dst.string;
 
 import java.util.BitSet;
 
