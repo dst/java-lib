@@ -3,7 +3,7 @@ package io.github.dst.list;
 import java.util.Objects;
 
 /**
- * With sentinels / guards.
+ * With sentinels / guards / dummy nodes.
  * X <-> 5 <-> 7 <-> 2 <-> X
  *     <-prev- 7 -next->
  */
