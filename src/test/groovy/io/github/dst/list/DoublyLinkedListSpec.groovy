@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class DoublyLinkedListSpec extends Specification {
 
-    def "addFirst empty list"() {
+    def "empty list"() {
         given:
             def list = new DoublyLinkedList<Integer>()
         expect:
