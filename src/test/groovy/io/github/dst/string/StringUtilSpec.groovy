@@ -10,10 +10,10 @@ class StringUtilSpec extends Specification {
         expect:
             StringUtil.reverse(word) == reversed
         where:
-            word                                || reversed
-            ""                                  || ""
-            "a"                                 || "a"
-            "abc"                               || "cba"
-            "aba"                               || "aba"
+            word  || reversed
+            ""    || ""
+            "a"   || "a"
+            "abc" || "cba"
+            "aba" || "aba"
     }
 }
