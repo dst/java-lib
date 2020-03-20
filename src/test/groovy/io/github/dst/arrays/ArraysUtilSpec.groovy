@@ -5,6 +5,16 @@ import spock.lang.Unroll
 
 class ArraysUtilSpec extends Specification {
 
+    def "Truncating array"() {
+        when:
+            int[] array = [1, 2, 3, 4]
+            int[] truncatedArray = new int[2]
+            System.arraycopy(array, 0, truncatedArray, 0, truncatedArray.length)
+        then:
+            truncatedArray == [1, 2]
+    }
+
+
     @Unroll
     def "sum of '#array' is '#sum'"() {
         expect:
