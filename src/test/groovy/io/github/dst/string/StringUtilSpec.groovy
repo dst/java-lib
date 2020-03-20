@@ -16,4 +16,16 @@ class StringUtilSpec extends Specification {
             "abc" || "cba"
             "aba" || "aba"
     }
+
+    @Unroll
+    def "sorted '#word' is '#sorted'"() {
+        expect:
+            StringUtil.sort(word) == sorted
+        where:
+            word  || sorted
+            ""    || ""
+            "a"   || "a"
+            "abc" || "abc"
+            "aba" || "aab"
+    }
 }
