@@ -29,6 +29,18 @@ class ArraysUtilSpec extends Specification {
     }
 
     @Unroll
+    def "matrix with #rows rows and #columns columns filled with #value is #matrix"() {
+        expect:
+            ArraysUtil.createMatrix(rows, columns, value) == matrix
+        where:
+            rows | columns | value || matrix
+            1    | 1       | 0     || [[0]]
+            1    | 1       | 1     || [[1]]
+            1    | 1       | -2    || [[-2]]
+            2    | 3       | 4     || [[4, 4, 4], [4, 4, 4]]
+    }
+
+    @Unroll
     def "sorted intervals of '#intervals' is '#sorted'"() {
         expect:
             ArraysUtil.sortIntervals(intervals as int[][]) == sorted
