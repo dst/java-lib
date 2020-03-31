@@ -39,4 +39,15 @@ class StringUtilSpec extends Specification {
             "ab" | "b"    || "a"
             "ab" | "ab"   || ""
     }
+
+    @Unroll
+    def "'#word' without prefix '#prefix' is '#result'"() {
+        expect:
+            StringUtil.removePrefix(word, prefix) == result
+        where:
+            word | prefix || result
+            ""   | ""     || ""
+            "ab" | "a"    || "b"
+            "ab" | "ab"   || ""
+    }
 }

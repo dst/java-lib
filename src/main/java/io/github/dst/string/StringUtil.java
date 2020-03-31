@@ -20,4 +20,11 @@ public class StringUtil {
         }
         return word.substring(0, word.length() - suffix.length());
     }
+
+    public static String removePrefix(String word, String prefix) {
+        if (!word.startsWith(prefix)) {
+            throw new IllegalArgumentException("Prefix doesn't exist");
+        }
+        return word.substring(prefix.length());
+    }
 }
