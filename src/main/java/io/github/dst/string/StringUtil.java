@@ -13,4 +13,11 @@ public class StringUtil {
         Arrays.sort(chars);
         return String.valueOf(chars);
     }
+
+    public static String removeSuffix(String word, String suffix) {
+        if (!word.endsWith(suffix)) {
+            throw new IllegalArgumentException("Suffix doesn't exist");
+        }
+        return word.substring(0, word.length() - suffix.length());
+    }
 }

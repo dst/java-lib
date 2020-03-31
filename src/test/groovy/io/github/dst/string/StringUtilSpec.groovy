@@ -28,4 +28,15 @@ class StringUtilSpec extends Specification {
             "abc" || "abc"
             "aba" || "aab"
     }
+
+    @Unroll
+    def "'#word' without suffix '#suffix' is '#result'"() {
+        expect:
+            StringUtil.removeSuffix(word, suffix) == result
+        where:
+            word | suffix || result
+            ""   | ""     || ""
+            "ab" | "b"    || "a"
+            "ab" | "ab"   || ""
+    }
 }
