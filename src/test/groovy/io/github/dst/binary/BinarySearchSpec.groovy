@@ -9,9 +9,9 @@ class BinarySearchSpec extends Specification {
             Arrays.binarySearch([1, 3, 9, 14, 15].toArray(), 9) == 2
     }
 
-    def "searching existing element which is duplicated"() {
+    def "searching existing element which is duplicated returns one of 2 indexes"() {
         expect:
-            Arrays.binarySearch([1, 3, 9, 9, 14, 15].toArray(), 9) == 2
+            Arrays.binarySearch([1, 3, 9, 9, 14, 15].toArray(), 9) in [2, 3]
     }
 
     def "searching not existing element"() {
