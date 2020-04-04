@@ -14,6 +14,10 @@ class ArraysUtilSpec extends Specification {
             truncatedArray == [1, 2]
     }
 
+    def "Comparing arrays"() {
+        expect:
+            Arrays.equals([1, 2, 3] as int[], [1, 2, 3] as int[])
+    }
 
     @Unroll
     def "sum of '#array' is '#sum'"() {
