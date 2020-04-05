@@ -18,6 +18,17 @@ class BitUtilSpec extends Specification {
             4 >> 1 == 2
     }
 
+    def "BigInteger as bitset"() {
+        when:
+            BigInteger value = new BigInteger("1100", 2)
+        then:
+            value == 12
+            value.testBit(0) == false // first bit
+            value.testBit(value.bitLength() - 1) == true // last bit
+            value.shiftRight(1) == 6 // 110
+            value.shiftLeft(1) == 24 // 11000
+    }
+
     @Unroll
     def "bitmasks from 0..00 to 1..11 for #n == #bitmasks"() {
         expect:
