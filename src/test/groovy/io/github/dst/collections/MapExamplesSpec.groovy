@@ -8,4 +8,9 @@ class MapExamplesSpec extends Specification {
         expect:
             new MapExamples().merge()
     }
+
+    def "removeIf example"() {
+        expect:
+            new MapExamples().removeIf()
+    }
 }
