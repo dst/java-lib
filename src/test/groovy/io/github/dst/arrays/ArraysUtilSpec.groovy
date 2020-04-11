@@ -45,11 +45,11 @@ class ArraysUtilSpec extends Specification {
     }
 
     @Unroll
-    def "sorted intervals of '#intervals' is '#sorted'"() {
+    def "sorted by first row elements of '#matrix' is '#sorted'"() {
         expect:
-            ArraysUtil.sortIntervals(intervals as int[][]) == sorted
+            ArraysUtil.sortByFirstRowElements(matrix as int[][]) == sorted
         where:
-            intervals                || sorted
+            matrix                   || sorted
             []                       || []
             [[1, 2]]                 || [[1, 2]]
             [[2, 4], [1, 3], [6, 9]] || [[1, 3], [2, 4], [6, 9]]

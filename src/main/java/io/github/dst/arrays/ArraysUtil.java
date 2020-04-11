@@ -17,8 +17,8 @@ public class ArraysUtil {
         return  matrix;
     }
 
-    public static int[][] sortIntervals(int[][] intervals) {
-        Arrays.sort(intervals, Comparator.comparing(a -> a[0]));
-        return intervals;
+    public static int[][] sortByFirstRowElements(int[][] matrix) {
+        Arrays.sort(matrix, Comparator.comparing(row -> row[0]));
+        return matrix;
     }
 }
