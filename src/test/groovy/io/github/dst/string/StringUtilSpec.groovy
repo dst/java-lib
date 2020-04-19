@@ -18,6 +18,19 @@ class StringUtilSpec extends Specification {
     }
 
     @Unroll
+    def "'#word' has #digits digits"() {
+        expect:
+            StringUtil.countDigits(word) == digits
+        where:
+            word  || digits
+            ""    || 0
+            "a"   || 0
+            "1"   || 1
+            "a1"  || 1
+            "9a1" || 2
+    }
+
+    @Unroll
     def "sorted '#word' is '#sorted'"() {
         expect:
             StringUtil.sort(word) == sorted
