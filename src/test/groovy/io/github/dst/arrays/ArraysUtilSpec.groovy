@@ -44,6 +44,21 @@ class ArraysUtilSpec extends Specification {
             2    | 3       | 4     || [[4, 4, 4], [4, 4, 4]]
     }
 
+    def "matrix to list of lists"() {
+        given:
+            String[][] matrix = [
+                    ["name", "age"],
+                    ["Natalia", "86"],
+                    ["Kazimierz", "45"]
+            ]
+        expect:
+            ArraysUtil.matrixToListOfLists(matrix) == [
+                    ["name", "age"],
+                    ["Natalia", "86"],
+                    ["Kazimierz", "45"]
+            ]
+    }
+
     @Unroll
     def "sorted by first row elements of '#matrix' is '#sorted'"() {
         expect:
