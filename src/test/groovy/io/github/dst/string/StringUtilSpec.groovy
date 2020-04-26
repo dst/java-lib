@@ -31,6 +31,18 @@ class StringUtilSpec extends Specification {
     }
 
     @Unroll
+    def "'#word' has #count '#c' chars"() {
+        expect:
+            StringUtil.countChar(word, c as char) == count
+        where:
+            word   | c   | count
+            ""     | 'a' | 0
+            "a"    | 'a' | 1
+            "a1"   | '1' | 1
+            "9a1a" | 'a' | 2
+    }
+
+    @Unroll
     def "sorted '#word' is '#sorted'"() {
         expect:
             StringUtil.sort(word) == sorted

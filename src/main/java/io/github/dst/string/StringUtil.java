@@ -18,6 +18,10 @@ public class StringUtil {
         return word.chars().filter(Character::isDigit).count();
     }
 
+    public static long countChar(String word, char c) {
+        return word.chars().filter(sChar -> sChar == c).count();
+    }
+
     public static String removeSuffix(String word, String suffix) {
         if (!word.endsWith(suffix)) {
             throw new IllegalArgumentException("Suffix doesn't exist");
