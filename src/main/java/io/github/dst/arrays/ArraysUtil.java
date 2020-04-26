@@ -25,11 +25,11 @@ public class ArraysUtil {
     // [0, 4, 7, 9, 10]
     public static int[] suffixSums(int[] nums) {
         int n = nums.length;
-        int[] sufixSums = new int[n + 1];
+        int[] suffixSums = new int[n + 1];
         for (int i = 0; i < n; i++) {
-            sufixSums[i + 1] = sufixSums[i] + nums[n - 1 - i];
+            suffixSums[i + 1] = suffixSums[i] + nums[n - 1 - i];
         }
-        return sufixSums;
+        return suffixSums;
     }
 
     public static int[][] createMatrix(int rowCount, int columnCount, int value) {
