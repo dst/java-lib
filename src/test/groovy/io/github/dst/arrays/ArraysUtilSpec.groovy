@@ -47,7 +47,7 @@ class ArraysUtilSpec extends Specification {
     @Unroll
     def "suffix sums of #nums are #sufixSums"() {
         expect:
-            ArraysUtil.sufixSums(nums as int[]) == sufixSums
+            ArraysUtil.suffixSums(nums as int[]) == sufixSums
         where:
             nums         || sufixSums
             []           || [0]

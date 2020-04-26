@@ -23,7 +23,7 @@ public class ArraysUtil {
 
     // [1, 2, 3, 4]
     // [0, 4, 7, 9, 10]
-    public static int[] sufixSums(int[] nums) {
+    public static int[] suffixSums(int[] nums) {
         int n = nums.length;
         int[] sufixSums = new int[n + 1];
         for (int i = 0; i < n; i++) {
