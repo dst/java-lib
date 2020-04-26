@@ -32,6 +32,10 @@ public class ArraysUtil {
         return suffixSums;
     }
 
+    public static int[] toArray(List<Integer> nums) {
+        return nums.stream().mapToInt(n -> n).toArray();
+    }
+
     public static int[][] createMatrix(int rowCount, int columnCount, int value) {
         int[][] matrix = new int[rowCount][columnCount];
         for (int[] row : matrix) {

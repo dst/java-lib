@@ -57,6 +57,17 @@ class ArraysUtilSpec extends Specification {
     }
 
     @Unroll
+    def "#list list to array"() {
+        expect:
+            ArraysUtil.toArray(list) == array
+        where:
+            list         || array
+            []           || []
+            [0]          || [0]
+            [1, 2, 3, 4] || [1, 2, 3, 4]
+    }
+
+    @Unroll
     def "matrix with #rows rows and #columns columns filled with #value is #matrix"() {
         expect:
             ArraysUtil.createMatrix(rows, columns, value) == matrix
