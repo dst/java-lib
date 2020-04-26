@@ -33,6 +33,30 @@ class ArraysUtilSpec extends Specification {
     }
 
     @Unroll
+    def "prefix sums of #nums are #prefixSums"() {
+        expect:
+            ArraysUtil.prefixSums(nums as int[]) == prefixSums
+        where:
+            nums         || prefixSums
+            []           || [0]
+            [0]          || [0, 0]
+            [-1]         || [0, -1]
+            [1, 2, 3, 4] || [0, 1, 3, 6, 10]
+    }
+
+    @Unroll
+    def "suffix sums of #nums are #sufixSums"() {
+        expect:
+            ArraysUtil.sufixSums(nums as int[]) == sufixSums
+        where:
+            nums         || sufixSums
+            []           || [0]
+            [0]          || [0, 0]
+            [-1]         || [0, -1]
+            [1, 2, 3, 4] || [0, 4, 7, 9, 10]
+    }
+
+    @Unroll
     def "matrix with #rows rows and #columns columns filled with #value is #matrix"() {
         expect:
             ArraysUtil.createMatrix(rows, columns, value) == matrix

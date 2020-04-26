@@ -11,6 +11,27 @@ public class ArraysUtil {
         return Arrays.stream(numbers).sum();
     }
 
+    // [1, 2, 3, 4]
+    // [0, 1, 3, 6, 10]
+    public static int[] prefixSums(int[] nums) {
+        int[] prefixSums = new int[nums.length + 1];
+        for (int i = 0; i < nums.length; i++) {
+            prefixSums[i + 1] = prefixSums[i] + nums[i];
+        }
+        return prefixSums;
+    }
+
+    // [1, 2, 3, 4]
+    // [0, 4, 7, 9, 10]
+    public static int[] sufixSums(int[] nums) {
+        int n = nums.length;
+        int[] sufixSums = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            sufixSums[i + 1] = sufixSums[i] + nums[n - 1 - i];
+        }
+        return sufixSums;
+    }
+
     public static int[][] createMatrix(int rowCount, int columnCount, int value) {
         int[][] matrix = new int[rowCount][columnCount];
         for (int[] row : matrix) {
