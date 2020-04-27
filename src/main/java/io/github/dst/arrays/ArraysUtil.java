@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ArraysUtil {
 
@@ -45,7 +46,7 @@ public class ArraysUtil {
     }
 
     public static <T> List<List<T>> matrixToListOfLists(T[][] matrix) {
-        return Arrays.stream(matrix)
+        return Stream.of(matrix)
                 .map(Arrays::asList)
                 .collect(Collectors.toList());
     }
