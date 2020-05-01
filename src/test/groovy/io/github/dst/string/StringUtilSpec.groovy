@@ -43,6 +43,17 @@ class StringUtilSpec extends Specification {
     }
 
     @Unroll
+    def "char frequencies of #word is #freq"() {
+        expect:
+            StringUtil.charFrequencies(word) == freq
+        where:
+            word   | freq
+            ""     | [:]
+            "a"    | [('a' as char): 1]
+            "caba" | [('a' as char): 2, ('b' as char): 1L, ('c' as char): 1L]
+    }
+
+    @Unroll
     def "sorted '#word' is '#sorted'"() {
         expect:
             StringUtil.sort(word) == sorted

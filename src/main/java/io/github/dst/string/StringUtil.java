@@ -1,6 +1,8 @@
 package io.github.dst.string;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StringUtil {
 
@@ -20,6 +22,12 @@ public class StringUtil {
 
     public static long countChar(String word, char c) {
         return word.chars().filter(sChar -> sChar == c).count();
+    }
+
+    public static Map<Character, Long> charFrequencies(String word) {
+        return word.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
     }
 
     public static String removeSuffix(String word, String suffix) {
