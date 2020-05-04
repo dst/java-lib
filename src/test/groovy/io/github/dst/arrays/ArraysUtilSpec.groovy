@@ -33,6 +33,18 @@ class ArraysUtilSpec extends Specification {
     }
 
     @Unroll
+    def "max of '#array' is '#max'"() {
+        expect:
+            ArraysUtil.max(array as int[]) == max
+        where:
+            array   || max
+            [0]     || 0
+            [-1]    || -1
+            [1]     || 1
+            [1, -1] || 1
+    }
+
+    @Unroll
     def "prefix sums of #nums are #prefixSums"() {
         expect:
             ArraysUtil.prefixSums(nums as int[]) == prefixSums

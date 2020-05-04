@@ -12,6 +12,10 @@ public class ArraysUtil {
         return Arrays.stream(numbers).sum();
     }
 
+    public static int max(int[] numbers) {
+        return Arrays.stream(numbers).max().getAsInt();
+    }
+
     // [1, 2, 3, 4]
     // [0, 1, 3, 6, 10]
     public static int[] prefixSums(int[] nums) {
