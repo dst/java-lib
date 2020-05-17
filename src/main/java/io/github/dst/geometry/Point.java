@@ -18,6 +18,12 @@ public class Point {
         return Math.sqrt(dx * dx + dy * dy);
     }
 
+    public Point center(Point other) {
+        double xCenter = (x + other.x) / 2;
+        double yCenter = (y + other.y) / 2;
+        return new Point(xCenter, yCenter);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
